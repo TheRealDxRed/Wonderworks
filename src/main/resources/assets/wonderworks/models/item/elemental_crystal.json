@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "wonderworks:item/elemental_crystal"
+	}
+}

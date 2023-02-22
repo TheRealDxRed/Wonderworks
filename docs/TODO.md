@@ -1,0 +1,9 @@
+- [ ] Basic model/blockstate datagen
+- [ ] Language datagen
+- [ ] Recipe datagen
+- [ ] Explorer's Notebook UI
+- [ ] Update to 1.19.3
+	- [ ] Remove deprecated code
+	- [ ] Creative Tab changes
+- [ ] Make survival playable
+	- Requires recipe datagen

@@ -1,0 +1,36 @@
+{
+	"variants": {
+		"facing=east,open=false": {
+			"model": "wonderworks:block/bag_of_holding",
+			"y": 90
+		},
+		"facing=east,open=true": {
+			"model": "wonderworks:block/bag_of_holding_open",
+			"y": 90
+		},
+		"facing=north,open=false": {
+			"model": "wonderworks:block/bag_of_holding",
+			"y": 0
+		},
+		"facing=north,open=true": {
+			"model": "wonderworks:block/bag_of_holding_open",
+			"y": 0
+		},
+		"facing=south,open=false": {
+			"model": "wonderworks:block/bag_of_holding",
+			"y": 180
+		},
+		"facing=south,open=true": {
+			"model": "wonderworks:block/bag_of_holding_open",
+			"y": 180
+		},
+		"facing=west,open=false": {
+			"model": "wonderworks:block/bag_of_holding",
+			"y": 270
+		},
+		"facing=west,open=true": {
+			"model": "wonderworks:block/bag_of_holding_open",
+			"y": 270
+		}
+	}
+}

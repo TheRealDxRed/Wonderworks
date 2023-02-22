@@ -1,0 +1,12 @@
+{
+	"itemGroup.wonderworks": "Wonderworks",
+	"container.bag_of_holding": "Bag of Holding",
+	"block.wonderworks.test_block": "Test Block",
+	"block.wonderworks.elemental_ore": "Elemental Ore",
+	"block.wonderworks.deepslate_elemental_ore": "Deepslate Elemental Ore",
+	"block.wonderworks.workbench": "Workbench",
+	"block.wonderworks.bag_of_holding": "Bag of Holding",
+	"item.wonderworks.elemental_crystal": "Elemental Crystal",
+	"item.wonderworks.explorers_notebook": "Explorer's Notebook",
+	"item.wonderworks.explorers_notebook.description": "It radiates magical energy..."
+}
