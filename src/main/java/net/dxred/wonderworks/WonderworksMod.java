@@ -7,6 +7,7 @@ import net.dxred.wonderworks.registry.ModBlocks;
 import net.dxred.wonderworks.registry.ModItems;
 import net.dxred.wonderworks.registry.ModMenuTypes;
 import net.dxred.wonderworks.registry.ModSoundEvents;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -35,5 +36,9 @@ public class WonderworksMod {
 	}
 
 	private void commonSetup(final FMLCommonSetupEvent event) {
+	}
+
+	public static ResourceLocation resourceLocation(String pName) {
+		return new ResourceLocation(MODID, pName);
 	}
 }

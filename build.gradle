@@ -15,9 +15,9 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
 	// The mappings can be changed at any time and must be in the following format.
-	// Channel:   Version:
-	// official   MCVersion			 Official field/method names from Mojang mapping files
-	// parchment  YYYY.MM.DD-MCVersion  Open community-sourced parameter names and javadocs layered on top of official
+	// Channel:	 Version:
+	// official	 MCVersion			 Official field/method names from Mojang mapping files
+	// parchment	YYYY.MM.DD-MCVersion	Open community-sourced parameter names and javadocs layered on top of official
 	//
 	// You must be aware of the Mojang license when using the 'official' or 'parchment' mappings.
 	// See more information here: https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
@@ -125,6 +125,10 @@ repositories {
 	// flatDir {
 	//	 dir 'libs'
 	// }
+	maven { url = "https://maven.blamejared.com/" } // JEI
+	maven { url = "https://repo.repsy.io/mvn/klikli-dev/mods" } // Modonomicon
+	maven { url = "https://cursemaven.com" } // CurseForge maven
+	maven { url = "https://modmaven.dev" } // Mirror 1
 }
 
 dependencies {
@@ -132,6 +136,14 @@ dependencies {
 	// that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
 	// The userdev artifact is a special name and will get all sorts of transformations applied to it.
 	minecraft 'net.minecraftforge:forge:1.19.2-43.2.4'
+
+	compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
+	compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
+	runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
+
+	implementation fg.deobf("com.klikli_dev:modonomicon:${mc_version}-${modonomicon_version}")
+
+	implementation fg.deobf("curse.maven:configured-${configured_id}:${configured_file}")
 
 	// Real mod deobf dependency examples - these get remapped to your current mappings
 	// implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
@@ -150,10 +162,10 @@ jar {
 		attributes([
 				"Specification-Title"	 : "wonderworks",
 				"Specification-Vendor"	: "wonderworkssareus",
-				"Specification-Version"   : "1", // We are version 1 of ourselves
+				"Specification-Version"	 : "1", // We are version 1 of ourselves
 				"Implementation-Title"	: project.name,
-				"Implementation-Version"  : project.jar.archiveVersion,
-				"Implementation-Vendor"   : "wonderworkssareus",
+				"Implementation-Version"	: project.jar.archiveVersion,
+				"Implementation-Vendor"	 : "wonderworkssareus",
 				"Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
 		])
 	}

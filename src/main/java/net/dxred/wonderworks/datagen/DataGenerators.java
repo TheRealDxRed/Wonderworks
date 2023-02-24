@@ -9,12 +9,12 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = WonderworksMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
-
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
 		generator.addProvider(true, new ModLootTableProvider(generator));
+		//generator.addProvider(true, new AspectFontProvider(generator));
 	}
 }
