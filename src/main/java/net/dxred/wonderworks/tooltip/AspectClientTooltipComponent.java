@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.Tesselator;
-import com.mojang.math.Matrix4f;
 
 import net.dxred.wonderworks.WonderworksMod;
 import net.dxred.wonderworks.aspect.AspectStack;
@@ -15,7 +13,6 @@ import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.client.renderer.MultiBufferSource.BufferSource;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
@@ -32,12 +29,12 @@ public class AspectClientTooltipComponent implements ClientTooltipComponent {
 
 	@Override
 	public int getHeight() {
-		return this.spacing * (this.component.aspects.size() / ASPECTS_PER_ROW);
+		return this.spacing * (int)Math.ceil((double)this.component.aspects.size() / (double)ASPECTS_PER_ROW);
 	}
 
 	@Override
 	public int getWidth(Font pFont) {
-		return this.spacing * (this.component.aspects.size() % (ASPECTS_PER_ROW + 1));
+		return this.spacing * (Math.min(this.component.aspects.size(), ASPECTS_PER_ROW));
 	}
 
 	@Override
@@ -59,18 +56,13 @@ public class AspectClientTooltipComponent implements ClientTooltipComponent {
 			pPoseStack.translate(0.0D, 0.0D, 400.0D);
 
 			if (count > 1) {
-				pFont.draw(
-					pPoseStack,
-					"" + count,
-					draw_x + 13,
-					draw_y + 13,
-					0x7f7f7f
-				);
+				String count_str = "" + count;
+				int x_offset = pFont.width(count_str);
 
-				pFont.draw(
+				pFont.drawShadow(
 					pPoseStack,
-					Component.literal("" + count),
-					draw_x + 12,
+					Component.literal(count_str),
+					draw_x + 12 - x_offset,
 					draw_y + 12,
 					0xffffff
 				);
@@ -78,11 +70,6 @@ public class AspectClientTooltipComponent implements ClientTooltipComponent {
 			
 			pPoseStack.popPose();
 		}
-	}
-
-	@Override
-	public void renderText(Font pFont, int pX, int pY, Matrix4f pMatrix4f, BufferSource pBufferSource) {
-
 	}
 
 	private static float[] colorIntToFloat(int pColor) {

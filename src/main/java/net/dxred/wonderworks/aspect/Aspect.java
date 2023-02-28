@@ -1,7 +1,11 @@
 package net.dxred.wonderworks.aspect;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Set;
 
 import net.dxred.wonderworks.WonderworksMod;
 import net.minecraft.network.chat.Component;
@@ -65,6 +69,19 @@ public class Aspect {
 
 	public static Aspect getAspect(String pTag) {
 		return aspects.get(pTag);
+	}
+
+	public static List<AspectStack> getAllAspects(int pStackSize) {
+		Set<String> keys = aspects.keySet();
+		Iterator<String> iter = keys.iterator();
+		ArrayList<AspectStack> out = new ArrayList<AspectStack>();
+
+		while (iter.hasNext()) {
+			String key = iter.next();
+			out.add(new AspectStack(aspects.get(key), pStackSize));
+		}
+
+		return out;
 	}
 
 	public boolean isPrimal() {

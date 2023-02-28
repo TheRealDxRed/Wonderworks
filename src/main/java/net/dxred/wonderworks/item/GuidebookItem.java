@@ -20,6 +20,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
+//TODO: replace entire class with Modonomicon implementation
+
 public class GuidebookItem extends Item implements MenuProvider {
 	protected final ContainerData data;
 
