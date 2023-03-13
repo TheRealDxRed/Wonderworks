@@ -1,29 +1,5 @@
-## Plans
- - [ ] Blocks
-	 - [ ] Wood -> greatwood, silverwood, flux wood
-		 - [ ] Logs
-			 - [ ] Stripped
-		 - [ ] Planks
-		 - [ ] Slabs
-		 - [ ] Stairs
-		 - [ ] Fences
-		 - [ ] Gates
-		 - [ ] Doors
-		 - [ ] Trapdoors
-	 - [ ] Stone -> arcane stone, flux stone
-		 - [ ] "Natural"
-		 - [ ] Cobbled
-		 - [ ] Smooth
-		 - [ ] Bricks
-		 - [ ] Slabs
-		 - [ ] Stairs
-	 - [ ] Dirt -> magic dirt?, flux dirt
-		 - [ ] Grass
-			 - [ ] Path
-		 - [ ] Coarse?
-		 - [ ] Farmland
- - [ ] Aspects (OH GOD I AM GOING TO SUFFER)
-	 - [ ] Registry
-	 - [ ] oh no word no good plz help me im trapped here with no way out until i finish this mod im just a lonely little programming boi i never asked for this
- - [ ] Biomes
- - [ ] Items
+# Gameplay
+
+Wonderworks aims to provide the player with as many options as possible for progression. If you prefer hunting, you should be able to hunt your way through the early game. If you like to farm, farm away. If you want to feel like a scientist, you can progress through good-old-fashion research. Each path will have unique items and equipment, as well as different long-term effects on the player. In multiplayer, players can team up and pool their progress- assuming their path of choice allows it.
+
+The player's progress will be tracked through the built-in guidebook, made with Modonomicon. There is more than one, each containing those unique items mentioned earlier. This means players in the late game may have vastly different equipment from one-another, so choose your path wisely. The research table is the fastest way to unlock new mechanics and recipes, but may be too boring for some players. In that case, picking up a sword or joining a certain cult might be of more interest.
